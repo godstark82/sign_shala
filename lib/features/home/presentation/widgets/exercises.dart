@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:sign_shala/features/home/data/models/course_model.dart';
+import 'package:sign_shala/features/home/presentation/pages/course_page.dart';
+import 'package:sign_shala/features/home/presentation/pages/quiz_page.dart';
 
 class ExerciseWidget extends StatelessWidget {
   const ExerciseWidget({super.key});
@@ -24,21 +28,27 @@ class ExerciseWidget extends StatelessWidget {
             child: ListView.separated(
                 itemCount: 5,
                 shrinkWrap: true,
-                separatorBuilder: (context, index){
+                separatorBuilder: (context, index) {
                   return SizedBox(height: 5);
                 },
                 itemBuilder: (context, index) {
                   return ListTile(
+                    onTap: () {
+                      Get.to(() => QuizPage(quiz: quizModel));
+                    },
                     tileColor: Theme.of(context).cardColor,
                     leading: CircleAvatar(
-                      child: Text('${index+1}'),
+                      child: Text('${index + 1}'),
                     ),
-                    title: Text('Exercise ${index+1}: Greetings'),
+                    title: Text('Exercise ${index + 1}: Greetings'),
                     subtitle: Row(
                       children: [
-                        Icon(LineIcons.clock,color: Colors.grey,size: 16),
+                        Icon(LineIcons.clock, color: Colors.grey, size: 16),
                         SizedBox(width: 5),
-                        Text('5 Minutes',style: TextStyle(color: Colors.grey),)
+                        Text(
+                          '5 Minutes',
+                          style: TextStyle(color: Colors.grey),
+                        )
                       ],
                     ),
                   );

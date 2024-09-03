@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sign_shala/features/home/data/models/course_model.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class LessonPage extends StatelessWidget {
+class LessonPage extends StatefulWidget {
   final LessonModel lesson;
   const LessonPage({super.key, required this.lesson});
+
+  @override
+  State<LessonPage> createState() => _LessonPageState();
+}
+
+class _LessonPageState extends State<LessonPage> {
+  late YoutubePlayerController ytController;
+
+  @override
+  void initState() {
+    ytController = YoutubePlayerController(
+        initialVideoId: YoutubePlayer.convertUrlToId(widget.lesson.videoUrl!)!,
+        flags: YoutubePlayerFlags(
+          autoPlay: true,
+        ));
+    super.initState();
+  }
+  
+
+  @override
+  void dispose() {
+    ytController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +37,7 @@ class LessonPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.medium(
-            title: Text(lesson.name),
+            title: Text(widget.lesson.name),
           ),
           SliverToBoxAdapter(
               child: Container(
@@ -27,6 +52,7 @@ class LessonPage extends StatelessWidget {
                   BoxShadow(color: Colors.grey),
                 ],
                 borderRadius: BorderRadius.circular(16)),
+            child: YoutubePlayer(controller: ytController),
           )),
           SliverToBoxAdapter(
             child: Padding(
@@ -35,11 +61,13 @@ class LessonPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    lesson.desc,
+                    widget.lesson.desc,
                     style: TextStyle(fontSize: 18),
                   ),
-                  if (lesson.img != null) Text('Images related to this lesson'),
-                  if (lesson.img != null) Image.network(lesson.img!)
+                  if (widget.lesson.img != null)
+                    Text('Images related to this lesson'),
+                  if (widget.lesson.img != null)
+                    Image.network(widget.lesson.img!)
                 ],
               ),
             ),

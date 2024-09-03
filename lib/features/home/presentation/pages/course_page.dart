@@ -3,36 +3,29 @@ import 'package:get/get.dart';
 import 'package:sign_shala/features/home/data/models/course_model.dart';
 import 'package:sign_shala/features/home/presentation/pages/unit_page.dart';
 
+const String img =
+    'https://classroomclipart.com/image/static2/preview2/sign-language-hello-clipart-10329.jpg';
+final quizModel = QuizModel(
+    question: 'What does this sign says ?',
+    img: img,
+    options: ['A', 'B', 'C', 'D']);
+
 class CoursePage extends StatelessWidget {
   const CoursePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const String img =
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fsign-language&psig=AOvVaw3TTX1Xuqwwa8IoG8_cZjOE&ust=1725460492866000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDS_K__pogDFQAAAAAdAAAAABAE';
-    final List<QuizModel> quizes = [
-      QuizModel(
-          question: 'What does this sign says ?',
-          img: 'img',
-          options: ['A', 'B', 'C', 'D']),
-      QuizModel(
-          question: 'What does this sign says ?',
-          img: 'img',
-          options: ['A', 'B', 'C', 'D']),
-      QuizModel(
-          question: 'What does this sign says ?',
-          img: 'img',
-          options: ['A', 'B', 'C', 'D']),
-      QuizModel(
-          question: 'What does this sign says ?',
-          img: 'img',
-          options: ['A', 'B', 'C', 'D'])
-    ];
+    const String helloYt = 'https://youtu.be/yBQA3coUjH0';
+    final List<QuizModel> quizes = [quizModel, quizModel, quizModel, quizModel];
     final List<LessonModel> lessons = [
-      LessonModel(name: 'Hello', desc: 'Hello in Sign Language'),
-      LessonModel(name: 'Hello', desc: 'Hello in Sign Language'),
-      LessonModel(name: 'Hello', desc: 'Hello in Sign Language'),
-      LessonModel(name: 'Hello', desc: 'Hello in Sign Language'),
+      LessonModel(
+          name: 'Hello', desc: 'Hello in Sign Language', videoUrl: helloYt),
+      LessonModel(
+          name: 'Hello', desc: 'Hello in Sign Language', videoUrl: helloYt),
+      LessonModel(
+          name: 'Hello', desc: 'Hello in Sign Language', videoUrl: helloYt),
+      LessonModel(
+          name: 'Hello', desc: 'Hello in Sign Language', videoUrl: helloYt),
     ];
     final List<UnitModel> units = [
       UnitModel(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sign_shala/features/home/data/models/course_model.dart';
 import 'package:sign_shala/features/home/presentation/pages/lesson_page.dart';
+import 'package:sign_shala/features/home/presentation/pages/quiz_page.dart';
 
 class UnitPage extends StatelessWidget {
   final UnitModel unit;
@@ -42,12 +43,11 @@ class UnitPage extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
                   child: ListTile(
                     onTap: () {
-                      Get.to(() => LessonPage(lesson: unit.lessons[index]));
+                      Get.to(() => QuizPage(quiz: unit.quizes[index]));
                     },
                     tileColor: Colors.white,
                     leading: Icon(Icons.question_mark),
-                    title: Text(
-                        'Exercise ${index + 1}'),
+                    title: Text('Exercise ${index + 1}'),
                     trailing: Icon(Icons.play_arrow_rounded),
                   ),
                 );

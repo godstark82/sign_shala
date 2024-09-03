@@ -1,7 +1,7 @@
 name: sign_shala
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.0+6
+version: 0.1.0+7
 
 environment:
   sdk: ^3.5.0
@@ -24,6 +24,7 @@ dependencies:
   dio: ^5.6.0
   google_drive_wrapper: ^0.0.5
   line_icons: ^2.0.3
+  youtube_player_flutter: ^9.0.3
 
 dev_dependencies:
   flutter_test:
