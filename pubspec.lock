@@ -256,6 +256,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  google_drive_wrapper:
+    dependency: "direct main"
+    description:
+      name: google_drive_wrapper
+      sha256: "46782334a2b6bff3229518a049923364eee525f0c045175b9dcb6f7a51c3b38b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -368,6 +376,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  line_icons:
+    dependency: "direct main"
+    description:
+      name: line_icons
+      sha256: "249d781d922f5437ac763d9c8f5a02cf5b499a6dc3f85e4b92e074cff0a932ab"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
   lints:
     dependency: transitive
     description:

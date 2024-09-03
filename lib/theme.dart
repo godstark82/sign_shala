@@ -343,6 +343,7 @@ class MaterialTheme {
           bodyColor: colorScheme.onSurface,
           displayColor: colorScheme.onSurface,
         ),
+        cardColor: colorScheme.onPrimary,
         scaffoldBackgroundColor: colorScheme.surface,
         canvasColor: colorScheme.surface,
       );
