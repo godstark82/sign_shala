@@ -37,11 +37,9 @@ class MainApp extends StatelessWidget {
       ],
       child: GetMaterialApp(
         theme: theme.light(),
-        darkTheme: theme.dark(),
-        highContrastTheme: theme.lightHighContrast(),
-        highContrastDarkTheme: theme.darkHighContrast(),
+        // darkTheme: theme.dark(),
         debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.light,
         title: 'Sign Shala',
         getPages: [
           GetPage(

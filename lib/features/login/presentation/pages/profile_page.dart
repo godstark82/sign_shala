@@ -13,11 +13,9 @@ class ProfilePage extends StatelessWidget {
         Padding(
             padding: EdgeInsets.all(6),
             child: IconButton(
-                tooltip: 'Log out',
-                onPressed: () {
-                  context.read<LoginBloc>().add(SignOutEvent());
-                },
-                icon: Icon(Icons.logout, color: Colors.red)))
+                tooltip: 'Settings',
+                onPressed: () {},
+                icon: Icon(Icons.settings)))
       ]),
       body: SingleChildScrollView(
         child: Padding(
@@ -35,12 +33,43 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Center(
-                child: Text(
-                  FirebaseAuth.instance.currentUser?.displayName ?? '',
-                  style: Theme.of(context).textTheme.titleLarge,
+              SizedBox(height: 10),
+              Card(
+                  child: ListTile(
+                title:
+                    Text('${FirebaseAuth.instance.currentUser?.displayName}'),
+                subtitle: Text('${FirebaseAuth.instance.currentUser?.email}'),
+                trailing: CircleAvatar(
+                  child: Icon(Icons.verified_user),
                 ),
-              )
+              )),
+              Card(
+                child: ListTile(
+                  title: Text('Current Rank'),
+                  trailing: Text(
+                    '#343',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  title: Text('Rating'),
+                  trailing: Text(
+                    '4568',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.logout, color: Colors.red),
+                  title: Text('Logout', style: TextStyle(color: Colors.red)),
+                  onTap: () {
+                    context.read<LoginBloc>().add(SignOutEvent());
+                  },
+                ),
+              ),
             ],
           ),
         ),

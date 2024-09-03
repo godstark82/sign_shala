@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sign_shala/features/home/presentation/pages/home_screen.dart';
-import 'package:sign_shala/features/home/presentation/widgets/daily_streak.dart';
+import 'package:sign_shala/features/home/presentation/pages/rank_page.dart';
 
-import 'package:sign_shala/features/home/presentation/widgets/dash_time.dart';
-import 'package:sign_shala/features/home/presentation/widgets/exercises.dart';
-import 'package:sign_shala/features/home/presentation/widgets/progress_widget.dart';
 import 'package:sign_shala/features/login/presentation/pages/profile_page.dart';
 
 class Home extends StatefulWidget {
@@ -20,7 +16,7 @@ class _HomeState extends State<Home> {
   final List<Widget> screens = [
     HomeScreen(),
     SizedBox(),
-    SizedBox(),
+    RankPage(),
     ProfilePage(),
   ];
   int currentIndex = 0;
