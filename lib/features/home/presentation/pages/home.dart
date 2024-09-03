@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:sign_shala/features/home/presentation/pages/course_page.dart';
 import 'package:sign_shala/features/home/presentation/pages/home_screen.dart';
 import 'package:sign_shala/features/home/presentation/pages/rank_page.dart';
 
@@ -15,7 +16,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final List<Widget> screens = [
     HomeScreen(),
-    SizedBox(),
+    CoursePage(),
     RankPage(),
     ProfilePage(),
   ];
